@@ -1,0 +1,244 @@
+:root {
+    /*Establece variables de CSS personalizadas que contienen valores específicos para reutilizar en todo el documento.*/
+    --azul-marinno: #1F3B4D;
+    --cian: #17BEBB;
+    --gris-claro: #F0F0F0;
+    --blanco-puro: #FFFFFF;
+    --gris-oscuro: #515151;
+    --font-family: 'Roboto', sans-serif;
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
+}
+
+/*Global*/
+* {
+    /*Establece un estilo para todos los elementos HTML.*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /*Establece un estilo para el cuerpo del documento.*/
+    font-family: var(--font-family);
+    font-size: var(--md);
+    background-color: var(--gris-claro);
+    color: var(--azul-marinno);
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.header {
+    /*Establece un estilo para el encabezado del documento.*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--azul-marinno);
+    color: var(--blanco-puro);
+    padding: 0px 0px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: var(--gris-oscuro) 0px 2px 10px;
+}
+
+.logo img {
+    /*Establece un estilo para las imágenes dentro del encabezado.*/
+    max-height: 70px;
+    margin-left: 15px;
+}
+
+.header-nav {
+    /*Establece un estilo para la navegación dentro del encabezado.*/
+    display: flex;
+    list-style: none;
+    gap: 0.1rem;
+    margin-left: auto;
+}
+
+.nav-links {
+    /*Establece un estilo para las listas dentro de la navegación del encabezado.*/
+    display: flex;
+    list-style: none;
+    gap: 0.1rem;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links .items {
+    text-decoration: none;
+    color: var(--gris-claro);
+    font-size: var(--sm);
+    padding: 5px;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+    padding-right: 15px;
+}
+
+.auth-buttons .login,
+.auth-buttons .signup {
+    padding: 4px 4px 4px 4px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.auth-buttons .login {
+    background-color: var(--gris-claro);
+    color: var(--azul-marinno);
+}
+
+.auth-buttons .signup {
+    background-color: var(--cian);
+    color: var(--gris-claro);
+}
+
+.nav-links .items:hover {
+    background-color: var(--cian);
+    color: var(--azul-marinno);
+    border-radius: 10px;
+    box-shadow: var(--gris-claro) 1px 1px 2px;
+}
+
+.auth-buttons .login:hover {
+    background-color: var(--gris-oscuro);
+    border-radius: 5px;
+    color: var(--blanco-puro);
+    box-shadow: var(--gris-claro) 2px 2px 4px;
+}
+
+.auth-buttons .signup:hover {
+    background-color: var(--gris-oscuro);
+    border-radius: 5px;
+    color: var(--blanco-puro);
+    box-shadow: var(--gris-claro) 2px 2px 4px;
+}
+
+/* Estilos base para el header */
+
+/* Para pantallas grandes */
+@media (min-width: 1024px) {
+    .header {
+        padding: 0;
+    }
+
+    .header-nav {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .auth-buttons .login,
+    .auth-buttons .signup {
+        font-size: 16px;
+    }
+}
+
+/* Para tablets en modo horizontal (entre 768px y 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .header {
+        padding: 0;
+    }
+
+    .header-nav {
+        gap: 1rem;
+    }
+
+    .auth-buttons .login,
+    .auth-buttons .signup {
+        font-size: 14px;
+    }
+}
+
+/* Para tablets en modo vertical y móviles grandes (entre 600px y 767px) */
+@media (min-width: 600px) and (max-width: 767px) {
+    .header {
+        padding: 5px 5px;
+    }
+
+    .header-nav {
+        gap: 0.5rem;
+    }
+
+    .auth-buttons .login,
+    .auth-buttons .signup {
+        font-size: 13px;
+    }
+}
+
+/* Para móviles medianos y pequeños (entre 320px y 599px) */
+@media (max-width: 599px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5px;
+    }
+
+    .logo img {
+        max-height: 50px;
+        margin-left: 0;
+    }
+
+    .header-nav {
+        display: none;
+        /* Oculta el menú de navegación en pantallas pequeñas */
+    }
+
+    .auth-buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-right: 0;
+    }
+
+    .auth-buttons .login,
+    .auth-buttons .signup {
+        font-size: 12px;
+        padding: 6px 8px;
+        flex: 1;
+        margin: 0 5px;
+    }
+}
+
+/* Alternativa para mostrar un icono de menú en pantallas pequeñas */
+@media (max-width: 599px) {
+    .menu-icon {
+        display: block;
+        /* Asegúrate de que el icono del menú esté visible en pantallas pequeñas */
+        cursor: pointer;
+    }
+
+    .header-nav.active {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        padding-top: 10px;
+        background-color: var(--azul-marinno);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,77 @@
+:root {
+    /*Establece variables de CSS personalizadas que contienen valores específicos para reutilizar en todo el documento.*/
+    --azul-marinno: #1F3B4D;
+    --cian: #17BEBB;
+    --gris-claro: #F0F0F0;
+    --blanco-puro: #FFFFFF;
+    --gris-oscuro: #515151;
+    --font-family: 'Roboto', sans-serif;
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
+}
+
+/*Global*/
+* {
+    /*Establece un estilo para todos los elementos HTML.*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /*Establece un estilo para el cuerpo del documento.*/
+    font-family: var(--font-family);
+    font-size: var(--md);
+    background-color: var(--gris-claro);
+    color: var(--azul-marinno);
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.gallery {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    position: relative;
+    background-color: var(--gris-claro);
+    padding: 1rem 0;
+    width: 100vw;
+    height: auto;
+    margin: auto;
+}
+
+.gallery .gallery-slider {
+    display: flex;
+    animation: scroll 10s linear infinite;
+    -webkit-animation: scroll 10s linear infinite;
+    width: calc(600px * 5);
+}
+
+.gallery .gallery-image {
+    width: 600px;
+    margin: 1px;
+    overflow: hidden;
+}
+
+.gallery .gallery-slider img {
+    width: 100%;
+    height: auto;
+}
+
+@keyframes scroll {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    100% {
+        -webkit-transform: translateX(calc(-600px * 1));
+        transform: translateX(calc(-600px * 1));
+    }
+}
+
+.gallery-image:hover {
+    transform: scale(1.1);
+}

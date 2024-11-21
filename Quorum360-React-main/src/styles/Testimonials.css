@@ -1,0 +1,113 @@
+:root {
+    /*Establece variables de CSS personalizadas que contienen valores específicos para reutilizar en todo el documento.*/
+    --azul-marinno: #1F3B4D;
+    --cian: #17BEBB;
+    --gris-claro: #F0F0F0;
+    --blanco-puro: #FFFFFF;
+    --gris-oscuro: #515151;
+    --font-family: 'Roboto', sans-serif;
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
+}
+
+/*Global*/
+* {
+    /*Establece un estilo para todos los elementos HTML.*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /*Establece un estilo para el cuerpo del documento.*/
+    font-family: var(--font-family);
+    font-size: var(--md);
+    background-color: var(--gris-claro);
+    color: var(--azul-marinno);
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*testimonials*/
+.testimonials {
+    background-color: var(--gris-claro);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    color: var(--azul-marinno);
+    margin-bottom: 0.5rem;
+}
+
+.testimonial {
+    display: flex;
+    align-items: center;
+    background-color: var(--blanco-puro);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    position: relative;
+}
+
+.testimonial:hover {
+    transform: scale(1.07);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.testimonial-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    /*Establece un radio de esquina para el borde de un elemento.*/
+    object-fit: cover;
+    /*Establece cómo se ajusta el contenido de un elemento de imagen.*/
+    margin-right: 15px;
+    border: 3px solid var(--cian);
+    transition: border-color 0.3s ease;
+}
+
+.testimonial:hover .testimonial-img {
+    border-color: var(--azul-marinno);
+    width: 120px;
+    height: 120px;
+}
+
+.testimonial .content {
+    flex-grow: 1;
+}
+
+.testimonials .name {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--azul-marinno);
+    margin-bottom: 1rem;
+}
+
+.profession {
+    font-size: 0.8rem;
+    color: var(--gris-oscuro);
+    margin-bottom: 0.5rem;
+}
+
+.testimonial .content .description {
+    font-size: 0.85rem;
+    color: var(--azul-marinno);
+}

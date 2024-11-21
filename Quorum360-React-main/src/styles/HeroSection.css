@@ -1,0 +1,44 @@
+:root {
+    /*Establece variables de CSS personalizadas que contienen valores específicos para reutilizar en todo el documento.*/
+    --azul-marinno: #1F3B4D;
+    --cian: #17BEBB;
+    --gris-claro: #F0F0F0;
+    --blanco-puro: #FFFFFF;
+    --gris-oscuro: #515151;
+    --font-family: 'Roboto', sans-serif;
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
+}
+
+/*Global*/
+* {
+    /*Establece un estilo para todos los elementos HTML.*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /*Establece un estilo para el cuerpo del documento.*/
+    font-family: var(--font-family);
+    font-size: var(--md);
+    background-color: var(--gris-claro);
+    color: var(--azul-marinno);
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.hero {
+    /*Establece un estilo para el héroe del documento.*/
+    background-color: var(--gris-claro);
+    text-align: center;
+}
+
+.hero-logo {
+    /*Establece un estilo para el logotipo del héroe.*/
+    max-width: 100%;
+    height: auto;
+    padding-top: 75px;
+}
